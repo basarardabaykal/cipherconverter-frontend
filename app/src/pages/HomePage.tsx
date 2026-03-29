@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 type CipherTool = {
   name: string
   description: string
@@ -69,12 +71,12 @@ function HomePage() {
       />
 
       <header className="sticky top-0 z-10 mx-auto flex w-full max-w-7xl flex-col items-start gap-3 rounded-2xl border border-[#efe5db] bg-[#fffdf8]/90 px-4 py-3 backdrop-blur md:flex-row md:items-center md:justify-between md:rounded-full">
-        <a
+        <Link
           className="text-base font-bold tracking-[0.02em] text-[#171412] no-underline"
-          href="/"
+          to="/"
         >
           CipherConverter
-        </a>
+        </Link>
         <nav
           className="flex w-full items-center justify-between gap-3 md:w-auto md:justify-normal"
           aria-label="Main"
@@ -117,9 +119,9 @@ function HomePage() {
         aria-label="Cipher methods"
       >
         {cipherTools.map((tool, index) => (
-          <a
+          <Link
             className="group flex min-h-48 flex-col gap-3 rounded-2xl border border-[#efe5db] bg-white p-4 text-inherit no-underline shadow-[0_6px_0_rgba(224,209,193,0.7)] transition-all hover:-translate-y-1 hover:border-[#e5b7a8] hover:shadow-[0_24px_40px_rgba(127,58,26,0.12)] md:min-h-52"
-            href={tool.path}
+            to={tool.path}
             key={tool.path}
             style={{ transitionDelay: `${index * 35}ms` }}
           >
@@ -131,7 +133,7 @@ function HomePage() {
             <span className="mt-auto text-sm font-bold text-[#b7381b] group-hover:text-[#8f2414]">
               Open Tool
             </span>
-          </a>
+          </Link>
         ))}
       </section>
 
