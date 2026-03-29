@@ -39,9 +39,9 @@ const cipherTools: CipherTool[] = [
     family: 'Mathematical',
   },
   {
-    name: 'Rail Fence Cipher',
-    description: 'Rearrange text in zig-zag rails for transposition-style output.',
-    path: '/ciphers/rail-fence',
+    name: 'Transposition Cipher',
+    description: 'Rearrange characters by position to transform plaintext patterns.',
+    path: '/ciphers/transposition',
     family: 'Transposition',
   },
   {
