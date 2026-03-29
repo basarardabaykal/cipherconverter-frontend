@@ -1,11 +1,7 @@
-import './App.css'
+import HomePage from './pages/HomePage.tsx'
 
 function App() {
-  return (
-    <main className="app">
-      <h1>Cipher Converter</h1>
-    </main>
-  )
+  return <HomePage />
 }
 
 export default App
