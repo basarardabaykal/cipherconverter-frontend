@@ -79,7 +79,7 @@ function HomePage() {
       </section>
 
       <section
-        className="mx-auto mt-6 grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3"
+        className="mx-auto mt-20 grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3"
         id="api"
         aria-label="Workflow"
       >
