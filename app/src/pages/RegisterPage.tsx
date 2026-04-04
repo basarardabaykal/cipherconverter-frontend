@@ -1,22 +1,29 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 import { usersService } from '../services/usersService.tsx'
 
 function RegisterPage() {
   const navigate = useNavigate()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [passwordConfirm, setPasswordConfirm] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    if (password !== passwordConfirm) {
+      toast.error("Passwords do not match!")
+      return
+    }
+
     setIsLoading(true)
 
     const response = await usersService.register({
       email,
       password,
-      password2: password,
+      password2: passwordConfirm,
     })
 
     setIsLoading(false)
@@ -52,6 +59,17 @@ function RegisterPage() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              className="mt-2 w-full rounded-xl border border-[#d1deeb] bg-white px-3 py-2 text-sm text-[#0f172a] outline-none transition focus:border-[#1f6fd1] focus:ring-2 focus:ring-[#1f6fd1]/15"
+              required
+            />
+          </label>
+
+          <label className="block mt-4">
+            <span className="text-sm font-semibold text-[#4b5563]">Confirm Password</span>
+            <input
+              type="password"
+              value={passwordConfirm}
+              onChange={(event) => setPasswordConfirm(event.target.value)}
               className="mt-2 w-full rounded-xl border border-[#d1deeb] bg-white px-3 py-2 text-sm text-[#0f172a] outline-none transition focus:border-[#1f6fd1] focus:ring-2 focus:ring-[#1f6fd1]/15"
               required
             />
