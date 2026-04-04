@@ -16,24 +16,6 @@ const cipherTools: CipherTool[] = [
     family: 'Classical',
   },
   {
-    name: 'Vigenere Cipher',
-    description: 'Encrypt alphabetic text with a repeating keyword pattern.',
-    path: '/ciphers/vigenere',
-    family: 'Polyalphabetic',
-  },
-  {
-    name: 'Atbash Cipher',
-    description: 'Reverse the alphabet mapping to encode or decode messages.',
-    path: '/ciphers/atbash',
-    family: 'Substitution',
-  },
-  {
-    name: 'ROT13',
-    description: 'Apply a fixed 13-character shift with instant reversibility.',
-    path: '/ciphers/rot13',
-    family: 'Classical',
-  },
-  {
     name: 'Affine Cipher',
     description: 'Use multiplicative and additive keys on alphabet positions.',
     path: '/ciphers/affine',
@@ -44,18 +26,6 @@ const cipherTools: CipherTool[] = [
     description: 'Rearrange characters by position to transform plaintext patterns.',
     path: '/ciphers/transposition',
     family: 'Transposition',
-  },
-  {
-    name: 'Playfair Cipher',
-    description: 'Encrypt text digraphs using a keyword-based 5x5 key square.',
-    path: '/ciphers/playfair',
-    family: 'Digraph',
-  },
-  {
-    name: 'Hill Cipher',
-    description: 'Apply linear algebra with matrix keys to transform plaintext.',
-    path: '/ciphers/hill',
-    family: 'Matrix',
   },
 ]
 
