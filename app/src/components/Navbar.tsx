@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/cipherconverter.png';
 
 type NavbarProps = {
   isHomePage?: boolean;
@@ -11,9 +12,10 @@ export default function Navbar({ isHomePage = false }: NavbarProps) {
   return (
     <header className="sticky top-0 z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-full border border-[#d8e2ee] bg-[#f9fbff]/90 px-4 py-3 backdrop-blur">
       <Link
-        className="text-base font-bold tracking-[0.02em] text-[#0f172a] no-underline"
+        className="text-base font-bold tracking-[0.02em] text-[#0f172a] no-underline flex items-center gap-2"
         to="/"
       >
+        <img src={logo} alt="Cipher Converter Logo" className="h-6 w-auto" />
         CipherConverter
       </Link>
       <nav className="flex items-center gap-3" aria-label="Main">
