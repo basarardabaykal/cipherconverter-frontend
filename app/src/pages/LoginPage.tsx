@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { usersService } from '../services/usersService.tsx'
+import { useAuth } from '../context/AuthContext'
 
 function LoginPage() {
   const navigate = useNavigate()
+  const { login } = useAuth()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -13,11 +14,11 @@ function LoginPage() {
     event.preventDefault()
     setIsLoading(true)
 
-    const response = await usersService.login({ email, password })
+    const success = await login({ email, password })
 
     setIsLoading(false)
 
-    if (!response) {
+    if (!success) {
       return
     }
 
