@@ -24,7 +24,11 @@ export const usersService = {
 
     async logout(data: any) {
         try {
-            return await api.post(`${APP_NAME}/logout/`, data)
+            return await api.post(`${APP_NAME}/logout/`, data, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                },
+            })
         } catch (error: any) {
             toast.error("Server connection failed.")
             return null
@@ -42,7 +46,11 @@ export const usersService = {
 
     async me() {
         try {
-            return await api.get(`${APP_NAME}/me/`)
+            return await api.get(`${APP_NAME}/me/`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                },
+            })
         } catch (error: any) {
             toast.error("Server connection failed.")
             return null
