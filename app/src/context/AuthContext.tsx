@@ -43,11 +43,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const res = await usersService.login(data);
     
     if (res && res.status === 200) {
-      localStorage.setItem("access_token", res.data.access || res.data.access_token);
-      
-      if (res.data.refresh || res.data.refresh_token) {
-        localStorage.setItem("refresh_token", res.data.refresh || res.data.refresh_token);
-      }
+      localStorage.setItem("access_token", res.data.access);
+      localStorage.setItem("refresh_token", res.data.refresh);
       
       await checkAuth();
       return true;
