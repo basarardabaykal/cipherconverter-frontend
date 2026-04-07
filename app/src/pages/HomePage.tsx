@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 type CipherTool = {
   name: string
@@ -15,24 +16,6 @@ const cipherTools: CipherTool[] = [
     family: 'Classical',
   },
   {
-    name: 'Vigenere Cipher',
-    description: 'Encrypt alphabetic text with a repeating keyword pattern.',
-    path: '/ciphers/vigenere',
-    family: 'Polyalphabetic',
-  },
-  {
-    name: 'Atbash Cipher',
-    description: 'Reverse the alphabet mapping to encode or decode messages.',
-    path: '/ciphers/atbash',
-    family: 'Substitution',
-  },
-  {
-    name: 'ROT13',
-    description: 'Apply a fixed 13-character shift with instant reversibility.',
-    path: '/ciphers/rot13',
-    family: 'Classical',
-  },
-  {
     name: 'Affine Cipher',
     description: 'Use multiplicative and additive keys on alphabet positions.',
     path: '/ciphers/affine',
@@ -44,45 +27,12 @@ const cipherTools: CipherTool[] = [
     path: '/ciphers/transposition',
     family: 'Transposition',
   },
-  {
-    name: 'Playfair Cipher',
-    description: 'Encrypt text digraphs using a keyword-based 5x5 key square.',
-    path: '/ciphers/playfair',
-    family: 'Digraph',
-  },
-  {
-    name: 'Hill Cipher',
-    description: 'Apply linear algebra with matrix keys to transform plaintext.',
-    path: '/ciphers/hill',
-    family: 'Matrix',
-  },
 ]
 
 function HomePage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#edf2f7] px-4 pb-16 pt-5 text-[#0f172a] sm:px-5">
-      <header className="sticky top-0 z-10 mx-auto flex w-full max-w-7xl flex-col items-start gap-3 rounded-2xl border border-[#d8e2ee] bg-[#f9fbff]/90 px-4 py-3 backdrop-blur md:flex-row md:items-center md:justify-between md:rounded-full">
-        <Link
-          className="text-base font-bold tracking-[0.02em] text-[#0f172a] no-underline"
-          to="/"
-        >
-          CipherConverter
-        </Link>
-        <nav
-          className="flex w-full items-center justify-between gap-3 md:w-auto md:justify-normal"
-          aria-label="Main"
-        >
-          <a className="text-sm font-semibold text-[#4b5563] no-underline hover:text-[#0f172a]" href="#tools">
-            Tools
-          </a>
-          <a className="text-sm font-semibold text-[#4b5563] no-underline hover:text-[#0f172a]" href="#about">
-            How it works
-          </a>
-          <a className="text-sm font-semibold text-[#4b5563] no-underline hover:text-[#0f172a]" href="#api">
-            API
-          </a>
-        </nav>
-      </header>
+      <Navbar isHomePage={true} />
 
       <section className="mx-auto mb-11 mt-14 max-w-3xl text-center" id="about">
         <p className="m-0 text-xs font-extrabold uppercase tracking-[0.12em] text-[#1f6fd1]">
@@ -129,7 +79,7 @@ function HomePage() {
       </section>
 
       <section
-        className="mx-auto mt-6 grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3"
+        className="mx-auto mt-20 grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3"
         id="api"
         aria-label="Workflow"
       >
