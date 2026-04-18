@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM node:23-bookworm AS build-stage
+FROM node:23-alpine AS build-stage
 
 WORKDIR /app
 
