@@ -22,10 +22,16 @@ const cipherTools: CipherTool[] = [
     family: 'Mathematical',
   },
   {
-    name: 'Transposition Cipher',
-    description: 'Rearrange characters by position to transform plaintext patterns.',
-    path: '/ciphers/transposition',
+    name: 'Columnar Cipher',
+    description: 'Arrange text into columns and read by order for transposition.',
+    path: '/ciphers/columnar',
     family: 'Transposition',
+  },
+  {
+    name: 'OTP Cipher',
+    description: 'XOR text with a key stream for reversible encode/decode flow.',
+    path: '/ciphers/otp',
+    family: 'Stream',
   },
 ]
 
