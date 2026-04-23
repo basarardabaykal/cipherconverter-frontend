@@ -22,9 +22,9 @@ const cipherTools: CipherTool[] = [
     family: 'Mathematical',
   },
   {
-    name: 'Transposition Cipher',
-    description: 'Rearrange characters by position to transform plaintext patterns.',
-    path: '/ciphers/transposition',
+    name: 'Columnar Cipher',
+    description: 'Arrange text into columns and read by order for transposition.',
+    path: '/ciphers/columnar',
     family: 'Transposition',
   },
 ]
