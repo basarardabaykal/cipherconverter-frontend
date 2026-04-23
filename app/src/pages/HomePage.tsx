@@ -27,6 +27,12 @@ const cipherTools: CipherTool[] = [
     path: '/ciphers/columnar',
     family: 'Transposition',
   },
+  {
+    name: 'OTP Cipher',
+    description: 'XOR text with a key stream for reversible encode/decode flow.',
+    path: '/ciphers/otp',
+    family: 'Stream',
+  },
 ]
 
 function HomePage() {

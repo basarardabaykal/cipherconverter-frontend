@@ -56,5 +56,23 @@ export const ciphersService = {
 			toast.error("Server connection failed.")
 			return null
 		}
+	},
+
+	async otp(data: any) {
+		try {
+			const response = await api.post(`${APP_NAME}/otp/`, data, {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+				},
+			})
+			if(response.data.status_message != "Success") {
+				toast.error(response.data.message)
+				return null
+			}
+			return response
+		} catch (error: any) {
+			toast.error("Server connection failed.")
+			return null
+		}
 	}
 }
