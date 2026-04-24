@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 function LoginPage() {
   const navigate = useNavigate()
-  const { login } = useAuth()
+  const { isAuthenticated, loading, login } = useAuth()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -22,7 +22,11 @@ function LoginPage() {
       return
     }
 
-    navigate('/')
+    navigate('/', { replace: true })
+  }
+
+  if (!loading && isAuthenticated) {
+    return <Navigate to="/" replace />
   }
 
   return (
