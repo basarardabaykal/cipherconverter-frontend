@@ -42,10 +42,10 @@ function HomePage() {
 
       <section className="mx-auto mb-11 mt-14 max-w-3xl text-center" id="about">
         <p className="m-0 text-xs font-extrabold uppercase tracking-[0.12em] text-[#1f6fd1]">
-          All your cipher tools in one place
+          
         </p>
         <h1 className="mt-3 text-[clamp(2rem,4.4vw,3.7rem)] leading-[1.06] font-bold">
-          Every cipher conversion you need, one click away.
+          Cipher conversion tools in one place
         </h1>
         <p className="mx-auto mt-4 max-w-[64ch] text-base leading-7 text-[#4b5563]">
           Convert, decrypt, and experiment with classical cipher methods through
