@@ -6,7 +6,7 @@ import ColumnarCipherPage from './pages/ColumnarCipherPage.tsx'
 import OtpCipherPage from './pages/OtpCipherPage.tsx'
 import LoginPage from './pages/LoginPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route path="/ciphers/otp" element={<OtpCipherPage />} />
         <Route path="/ciphers/transposition" element={<TranspositionCipherPage />} />
         <Route path="/ciphers/rail-fence" element={<TranspositionCipherPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   )
